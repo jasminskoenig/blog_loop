@@ -18,7 +18,7 @@ wordcount
 
 <!--# In their kick-off of this series, Petra Guasti and Mattia Zulianello briefly touched upon one of the most discussed features of populism: That it is in conflict with the core tenets of liberal democracy.   -->
 
-The tension between populism and liberal democracy is a complex and multifaceted issue that requires careful analysis. While recent events such as January 6th in the US, the PiS party\'s disregard for judicial rulings in Poland, or Netanjahu\'s attempt to curb judicial power in Israel may lead us to view populists as a threat to constitutional democracy, we must be cautious not to generalize about all populists in power. It is important to note that we are more likely to hear about cases where populists have overstepped constitutional boundaries than those where they have not.
+The tension between populism and liberal democracy is a complex and multifaceted issue that requires careful analysis. While recent events such as January 6th in the US, the PiS party's disregard for judicial rulings in Poland, or Netanjahu's attempt to curb judicial power in Israel may lead us to view populists as a threat to constitutional democracy, we must be cautious not to generalize about all populists in power. It is important to note that we are more likely to hear about cases where populists have overstepped constitutional boundaries than those where they have not.
 
 At the heart of populism is the idea that the people's (alleged homogenous) general will is the only legitimate input in the political decision-making process. This creates a conflict with the checks and balances and minority rights that are central to liberal democracy and often enshrined in a country's constitution. This often leads to the assumption that populists use constitutional changes to consolidate their power and dismantle democracy. However, there are voices that argue that the populist approach to constitutionalism is not undemocratic, but simply a different idea of democracy: one that views the constitution as a living document that changes with the people's general will. In our current research project, we tested these claims empirically. And considering that leading scholars have emphasized populism's multiple facets for a long-time, our results are not surprising: It depends on the context!
 
@@ -49,10 +49,60 @@ viewof source = Inputs.select(
   {label: "Select one", value: "Country", unique: true}
 )
 
+viewof dataset = Inputs.select(
+  ["V-Party", "PopuList", "Ruth-Lovell/Grahn"], 
+  {label: "Based on which dataset would you like to define populism?", value: "dataset"}
+)
+
 viewof populism = Inputs.select(
-  ["Government Mean", "Government Weighted Mean", "Populist Prime Minister"], 
+  [], 
   {label: "How do you want do define populism?", value: "populism"}
 )
+
+```
+
+```{ojs}
+
+viewof dataset = Inputs.select(
+  ["Datset 1", "Dataset 2", "Dataset 3"], 
+  {label: "Which Dataset would you like to use?", value: "dataset"}
+)
+
+viewof variables = Inputs.select(
+  [], 
+  {label: "Which Variable would you like to inspect?", value: "variable"}
+)
+
+{const datasetOptions = 
+  "Dataset 1": ["a", "b"],
+  "Dataset 2": ["c", "d"],
+  "Dataset 3": ["c", "f", "g"]
+}
+
+dataset.on("change", () => {
+  variables.options = datasetOptions[dataset].options;
+  variables.value = variables.options[0];
+});
+```
+
+```{ojs}
+
+// Define the available options for each dataset
+{const datasetOptions = 
+  "V-Party": ["Government Mean", "Government Weighted Mean"],
+  "PopuList": ["Government Mean", "Populist Prime Minister"],
+  "Ruth-Lovell-Grahn": ["Government Mean", "Government Weighted Mean", "Populist Prime Minister"]
+}
+```
+
+```{ojs}
+
+// Update the populism input options when the dataset input changes
+
+dataset.on("change", () => {
+  populism.options = datasetOptions[dataset].options;
+  populism.value = populism.options[0];
+});
 
 filtered = ojsdata.filter(function(ojsdata) {
   return ojsdata.country == source;
