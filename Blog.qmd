@@ -18,11 +18,7 @@ In their kick-off of this series, Petra Guasti and Mattia Zulianello touched upo
 
 ## Populists in power and constitutional regression - A myth?
 
-<<<<<<< HEAD
-The tension between populism and liberal democracy is a complex and multifaceted issue that requires careful analysis. While recent events such as January 6th in the US, the PiS party's disregard for judicial rulings in Poland, or Netanjahu's attempt to curb judicial power in Israel may lead us to view populists as a threat to constitutional democracy, we must be cautious not to generalize about all populists in power. It is important to note that we are more likely to hear about cases where populists have overstepped constitutional boundaries than those where they have not.
-=======
 The tension between populism and pluralism and minority rights is deeply rooted in the heart of populist ideology. The idea of a homogenous 'people' with a general will as the only legitimate input in the political decision-making process is at odds with the checks and balances and minority rights that are central to liberal democracy and often enshrined in a country's constitution. This often leads to the assumption that populists use constitutional changes to consolidate their power and dismantle democracy, a phenomenon often described as 'constitutional regression'.
->>>>>>> 66ddcd77cb85c6edf4c45cdbc706a06129438991
 
 Recent events such as January 6th in the US, the PiS party\'s disregard for judicial rulings in Poland, or Netanjahu\'s attempt to curb judicial power in Israel speak volumes to the threat populists can pose to constitutional democracy and yet there are voices that argue that the populist approach to constitutionalism is not undemocratic, but simply a different idea of democracy: one that views the constitution as a living document that changes with the people's general will. We argue that the relationship between populism and constitutional regression is anything but clear cut and requires further investigation.
 
