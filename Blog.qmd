@@ -38,9 +38,9 @@ Below, we implemented an interactive tool that lets users choose between XXX dif
 
 library(tidyverse)
 
-vdem <- readRDS("data/ccpc_vdem_ela.rds")
+vdem <- readRDS("data/ccpc_vdem_eu_la.rds")
 
-write.csv(ds, "data/ccpc_vdem_populism.csv")
+write.csv(vdem, "data/ccpc_vdem_populism.csv")
 
 ojs_define(data = vdem)
 
