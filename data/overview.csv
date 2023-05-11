@@ -1,61 +1,61 @@
-dataset.x,dataset.y,dataset
-V-Party,NA,Ruth-Lovell & Grahn
-V-Party,NA,NA
-V-Party,PopuList,Ruth-Lovell & Grahn
-V-Party,PopuList,NA
-V-Party,NA,NA
-V-Party,NA,NA
-V-Party,NA,Ruth-Lovell & Grahn
-V-Party,PopuList,Ruth-Lovell & Grahn
-V-Party,NA,Ruth-Lovell & Grahn
-V-Party,PopuList,Ruth-Lovell & Grahn
-V-Party,NA,Ruth-Lovell & Grahn
-V-Party,NA,Ruth-Lovell & Grahn
-V-Party,NA,Ruth-Lovell & Grahn
-V-Party,NA,Ruth-Lovell & Grahn
-V-Party,NA,Ruth-Lovell & Grahn
-V-Party,NA,NA
-V-Party,NA,Ruth-Lovell & Grahn
-V-Party,NA,Ruth-Lovell & Grahn
-V-Party,NA,Ruth-Lovell & Grahn
-V-Party,NA,Ruth-Lovell & Grahn
-V-Party,NA,Ruth-Lovell & Grahn
-V-Party,PopuList,Ruth-Lovell & Grahn
-V-Party,PopuList,Ruth-Lovell & Grahn
-V-Party,NA,Ruth-Lovell & Grahn
-V-Party,PopuList,Ruth-Lovell & Grahn
-V-Party,PopuList,Ruth-Lovell & Grahn
-V-Party,PopuList,Ruth-Lovell & Grahn
-V-Party,PopuList,Ruth-Lovell & Grahn
-V-Party,NA,Ruth-Lovell & Grahn
-V-Party,PopuList,Ruth-Lovell & Grahn
-V-Party,NA,NA
-V-Party,PopuList,Ruth-Lovell & Grahn
-V-Party,NA,Ruth-Lovell & Grahn
-V-Party,NA,NA
-V-Party,NA,NA
-V-Party,NA,NA
-V-Party,PopuList,Ruth-Lovell & Grahn
-V-Party,PopuList,Ruth-Lovell & Grahn
-V-Party,NA,NA
-V-Party,PopuList,Ruth-Lovell & Grahn
-V-Party,PopuList,Ruth-Lovell & Grahn
-V-Party,PopuList,Ruth-Lovell & Grahn
-V-Party,PopuList,Ruth-Lovell & Grahn
-V-Party,PopuList,Ruth-Lovell & Grahn
-V-Party,PopuList,Ruth-Lovell & Grahn
-V-Party,PopuList,Ruth-Lovell & Grahn
-V-Party,NA,NA
-V-Party,PopuList,Ruth-Lovell & Grahn
-V-Party,PopuList,Ruth-Lovell & Grahn
-V-Party,PopuList,Ruth-Lovell & Grahn
-V-Party,NA,NA
-V-Party,NA,Ruth-Lovell & Grahn
-V-Party,NA,NA
-V-Party,PopuList,Ruth-Lovell & Grahn
-V-Party,NA,Ruth-Lovell & Grahn
-V-Party,PopuList,Ruth-Lovell & Grahn
-V-Party,NA,NA
-V-Party,PopuList,Ruth-Lovell & Grahn
-V-Party,PopuList,Ruth-Lovell & Grahn
-V-Party,PopuList,Ruth-Lovell & Grahn
+country,dataset.x,dataset.y,dataset
+Mexico,V-Party,NA,Ruth-Lovell & Grahn
+Suriname,V-Party,NA,NA
+Sweden,V-Party,PopuList,Ruth-Lovell & Grahn
+Switzerland,V-Party,PopuList,NA
+Russia,V-Party,NA,NA
+Albania,V-Party,NA,NA
+Colombia,V-Party,NA,Ruth-Lovell & Grahn
+Poland,V-Party,PopuList,Ruth-Lovell & Grahn
+Brazil,V-Party,NA,Ruth-Lovell & Grahn
+Portugal,V-Party,PopuList,Ruth-Lovell & Grahn
+El Salvador,V-Party,NA,Ruth-Lovell & Grahn
+Bolivia,V-Party,NA,Ruth-Lovell & Grahn
+Honduras,V-Party,NA,Ruth-Lovell & Grahn
+Peru,V-Party,NA,Ruth-Lovell & Grahn
+Argentina,V-Party,NA,Ruth-Lovell & Grahn
+Kosovo,V-Party,NA,NA
+Venezuela,V-Party,NA,Ruth-Lovell & Grahn
+Nicaragua,V-Party,NA,Ruth-Lovell & Grahn
+Chile,V-Party,NA,Ruth-Lovell & Grahn
+Costa Rica,V-Party,NA,Ruth-Lovell & Grahn
+Ecuador,V-Party,NA,Ruth-Lovell & Grahn
+France,V-Party,PopuList,Ruth-Lovell & Grahn
+Germany,V-Party,PopuList,Ruth-Lovell & Grahn
+Guatemala,V-Party,NA,Ruth-Lovell & Grahn
+Ireland,V-Party,PopuList,Ruth-Lovell & Grahn
+Italy,V-Party,PopuList,Ruth-Lovell & Grahn
+Latvia,V-Party,PopuList,Ruth-Lovell & Grahn
+Netherlands,V-Party,PopuList,Ruth-Lovell & Grahn
+Panama,V-Party,NA,Ruth-Lovell & Grahn
+Spain,V-Party,PopuList,Ruth-Lovell & Grahn
+Ukraine,V-Party,NA,NA
+United Kingdom,V-Party,PopuList,Ruth-Lovell & Grahn
+Uruguay,V-Party,NA,Ruth-Lovell & Grahn
+Belarus,V-Party,NA,NA
+Moldova,V-Party,NA,NA
+German Democratic Republic,V-Party,NA,NA
+Austria,V-Party,PopuList,Ruth-Lovell & Grahn
+Belgium,V-Party,PopuList,Ruth-Lovell & Grahn
+Bosnia and Herzegovina,V-Party,NA,NA
+Bulgaria,V-Party,PopuList,Ruth-Lovell & Grahn
+Croatia,V-Party,PopuList,Ruth-Lovell & Grahn
+Czech Republic,V-Party,PopuList,Ruth-Lovell & Grahn
+Denmark,V-Party,PopuList,Ruth-Lovell & Grahn
+Estonia,V-Party,PopuList,Ruth-Lovell & Grahn
+Finland,V-Party,PopuList,Ruth-Lovell & Grahn
+Greece,V-Party,PopuList,Ruth-Lovell & Grahn
+Guyana,V-Party,NA,NA
+Iceland,V-Party,PopuList,Ruth-Lovell & Grahn
+Lithuania,V-Party,PopuList,Ruth-Lovell & Grahn
+Luxembourg,V-Party,PopuList,Ruth-Lovell & Grahn
+North Macedonia,V-Party,NA,NA
+Malta,V-Party,NA,Ruth-Lovell & Grahn
+Montenegro,V-Party,NA,NA
+Norway,V-Party,PopuList,Ruth-Lovell & Grahn
+Paraguay,V-Party,NA,Ruth-Lovell & Grahn
+Romania,V-Party,PopuList,Ruth-Lovell & Grahn
+Serbia,V-Party,NA,NA
+Slovakia,V-Party,PopuList,Ruth-Lovell & Grahn
+Slovenia,V-Party,PopuList,Ruth-Lovell & Grahn
+Hungary,V-Party,PopuList,Ruth-Lovell & Grahn
