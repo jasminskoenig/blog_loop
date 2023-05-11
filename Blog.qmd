@@ -40,14 +40,7 @@ library(tidyverse)
 
 vdem <- readRDS("data/ccpc_vdem_ela.rds")
 
-ds <- tibble(
-  name = c("V-Party", "PopuList", "Ruth-Lovell/Grahn"),
-  value1 = c("a", "b", "c"),
-  value2 = c("d", "e", "f"),
-  value3 = c("g", "h", NA)
-  )
-
-write.csv(ds, "data/ds.csv")
+write.csv(ds, "data/ccpc_vdem_populism.csv")
 
 ojs_define(data = vdem)
 
