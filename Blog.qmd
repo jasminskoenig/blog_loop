@@ -36,13 +36,27 @@ Below, we implemented an interactive tool that lets users choose between XXX dif
 ```{r}
 #| echo: false
 
+library(tidyverse)
+
 vdem <- readRDS("data/ccpc_vdem_ela.rds")
+
+ds <- tibble(
+  name = c("V-Party", "PopuList", "Ruth-Lovell/Grahn"),
+  value1 = c("a", "b", "c"),
+  value2 = c("d", "e", "f"),
+  value3 = c("g", "h", NA)
+  )
+
+write.csv(ds, "data/ds.csv")
 
 ojs_define(data = vdem)
 
 ```
 
 <!--# Why isn't Brazil coded as populist? -->
+
+<!--# LEGENDE &-->
+
 
 ```{ojs}
 //| echo: false
@@ -64,50 +78,24 @@ viewof populism = Inputs.select(
   {label: "How do you want do define populism?", value: "populism"}
 )
 
-```
-
-```{ojs}
-
-viewof dataset = Inputs.select(
-  ["Datset 1", "Dataset 2", "Dataset 3"], 
-  {label: "Which Dataset would you like to use?", value: "dataset"}
-)
-
-viewof variables = Inputs.select(
-  [], 
-  {label: "Which Variable would you like to inspect?", value: "variable"}
-)
-
-{const datasetOptions = 
-  "Dataset 1": ["a", "b"],
-  "Dataset 2": ["c", "d"],
-  "Dataset 3": ["c", "f", "g"]
-}
-
-dataset.on("change", () => {
-  variables.options = datasetOptions[dataset].options;
-  variables.value = variables.options[0];
-});
-```
-
-```{ojs}
-
 // Define the available options for each dataset
-{const datasetOptions = 
+datasetOptions = ({
   "V-Party": ["Government Mean", "Government Weighted Mean"],
   "PopuList": ["Government Mean", "Populist Prime Minister"],
   "Ruth-Lovell-Grahn": ["Government Mean", "Government Weighted Mean", "Populist Prime Minister"]
-}
+})
+
+dataset.onInput((event) => {
+  populism.options = datasetOptions[event.target.value];
+  populism.value = populism.options[0];
+});
+
 ```
+
 
 ```{ojs}
 
 // Update the populism input options when the dataset input changes
-
-dataset.on("change", () => {
-  populism.options = datasetOptions[dataset].options;
-  populism.value = populism.options[0];
-});
 
 filtered = ojsdata.filter(function(ojsdata) {
   return ojsdata.country == source;
@@ -242,3 +230,5 @@ To explain the varying effect of populism on constitutional democracy, we need t
 In the end our research comes back to the conclusion that we need to consider the context populists govern in: What is their host-ideology? What majorities do they have?
 
 Yes illiberalism is a challenge, but populism does not only consist of it and what facet of populism unfolds the most depends on its host-ideology.
+
+Populism in government and implementation in law. We know salient cases, but don't now that much more. They are also RRP, and not only populist. Look at judicial reviews -> Link to our other paper.
