@@ -9,9 +9,9 @@ execute:
 #| label: wordstats
 #| warning: false
 #| message: false
-library(wordcountaddin)
-wordcount <- wordcountaddin::text_stats('Blog.qmd')
-wordcount
+# library(wordcountaddin)
+# wordcount <- wordcountaddin::text_stats('Blog.qmd')
+# wordcount
 ```
 
 In their kick-off of this series, Petra Guasti and Mattia Zulianello touched upon one of the most discussed defining features of populism: That it is in conflict with two key features of liberal democracy: pluralism and minority rights.
@@ -34,6 +34,8 @@ Below, we implemented an interactive tool that lets users choose between 3 diffe
 
 ```{r}
 #| echo: false
+#| label: data-blog
+#| message: false
 
 library(tidyverse)
 
@@ -41,174 +43,18 @@ vdem <- readRDS("data/ccpc_vdem_eu_la.rds")
 
 write.csv(vdem, "data/ccpc_vdem_populism.csv")
 
-ojs_define(data = vdem)
-
-```
-
-<!--# Why isn't Brazil coded as populist? -->
-
-<!--# LEGENDE &-->
-
-```{ojs}
-//| echo: false
-
-ojsdata = transpose(data)
-
-viewof source = Inputs.select(
-  ojsdata.map(row => row.country), 
-  {label: "Select one", value: "Country", unique: true}
-)
-
-viewof dataset = Inputs.select(
-  ["V-Party", "PopuList", "Ruth-Lovell/Grahn"], 
-  {label: "Based on which dataset would you like to define populism?", value: "dataset"}
-)
-
-viewof populism = Inputs.select(
-  [], 
-  {label: "How do you want do define populism?", value: "populism"}
-)
-
-// Define the available options for each dataset
-datasetOptions = ({
-  "V-Party": ["Government Mean", "Government Weighted Mean"],
-  "PopuList": ["Government Mean", "Populist Prime Minister"],
-  "Ruth-Lovell-Grahn": ["Government Mean", "Government Weighted Mean", "Populist Prime Minister"]
-})
-
-dataset.onInput((event) => {
-  populism.options = datasetOptions[event.target.value];
-  populism.value = populism.options[0];
-});
-
-```
-
-```{ojs}
-
-// Update the populism input options when the dataset input changes
-
-filtered = ojsdata.filter(function(ojsdata) {
-  return ojsdata.country == source;
-})
-
-constchange = filtered.filter(function(filtered) {
-  return filtered.constchange > 0;
-})
-
-constchange2 = constchange.map(d => {
-  let populism_score;
-  if (populism === "Government Mean") {
-    populism_score = d.gov_popul_mean;
-  } else if (populism === "Government Weighted Mean") {
-    populism_score = d.gov_popul_weighted;
-  } else if (populism === "Populist Prime Minister") {
-    populism_score = d.gov_popul_prime;
-  } else {
-    populism_score = null;
-  }
-  return {
-    ...d,
-    populism_score
-  }
-})
-
-
-dashedLines = constchange2.filter(function(constchange2) {
-  return constchange2.evnttype === 1;
-})
-
-solidLines = constchange2.filter(function(constchange2) {
-  return constchange2.evnttype === 3;
-})
-```
-
-::: panel-tabset
-## Liberal Democracy
-
-```{ojs}
-console.log("dashedLines:", dashedLines);
-console.log("solidLines:", solidLines);
-console.log("constchange:", constchange2);
-
-Plot.plot({
-  marks: [
-    Plot.ruleY([0]),
-    ...constchange2.map(d => {
-      return Plot.ruleX([d.year], {
-        stroke: d.populism_score > 0.5 ? "#A44200" : "lightgrey",
-        strokeDasharray: [5, 5]
-      })
-    }),
-    ...solidLines.map(d => {
-      return Plot.ruleX([d.year], {
-        stroke: d.populism_score > 0.5 ? "#A44200" : "lightgrey",
-        strokeDash: "solid"
-      })
-    }),
-    Plot.lineY(filtered, {
-      x: "year", 
-      y: "v2x_liberal",
-      // stroke = colr, if check in each row whether row.type = saved source then make red, otherwise lightgrey
-      stroke: "black"      
-    })
-  ],
-  y: {
-    domain: [0, 1],
-    label: "V-Dem Liberal Democracy Index"
-  },
-  x: {
-    domain: [parseInt("1990"), parseInt("2021")],
-    label: "Year",
-    tickFormat: d3.format("d")
-  }
-})
-
 ```
 
 ## Participation
 
-```{ojs, echo: false}
-
-Plot.plot({
-  marks: [
-    Plot.ruleY([0]),
-    ...constchange2.map(d => {
-      return Plot.ruleX([d.year], {
-        stroke: d.populism_score > 0.5 ? "#A44200" : "lightgrey",
-        strokeDasharray: [5, 5]
-      })
-    }),
-    ...solidLines.map(d => {
-      return Plot.ruleX([d.year], {
-        stroke: d.populism_score > 0.5 ? "#A44200" : "lightgrey",
-        strokeDash: "solid"
-      })
-    }),
-    Plot.lineY(filtered, {
-      x: "year", 
-      y: "v2x_cspart",
-      // stroke = colr, if check in each row whether row.type = saved source then make red, otherwise lightgrey
-      stroke: "black"      
-    })
-  ],
-  y: {
-    domain: [0, 1],
-    label: "V-Dem Participation Index"
-  },
-  x: {
-    domain: [parseInt("1990"), parseInt("2021")],
-    label: "Year",
-    tickFormat: d3.format("d")
-  }
-})
+```{=html}
+<iframe width="100%" height="731" width ="400" frameborder="0" src="https://observablehq.com/embed/8d3cd6452ab1e67e@454?cells=viewof+source%2Cviewof+Dataset%2Cviewof+Vars%2Cplotfinal&amp;api_key=090a94e5c48335ac2bbdfd30208312b4f8820a71"></iframe>
 ```
-:::
-
 <!-- To get a better sense of the changes of constitutional texts that happen under populist governments, we constructed indices for executive aggrandizement, judicial independence, political rights and social rights. Out of 89 constitutional changes under populist government, only 10 cases can be captured with these indices. -->
 
 <!-- REFER TO RUTH-LOVELL ON IDEOLOGY! -->
 
-If you go through some of the different countries, you will see how much variance there is in how populists in office use constitutional canges. Our results speak to the findings of many other papers that show how much variance there is in populist parties behavior toward democracy. To understand the effect of populism on democracy, we need to combine cross-country analyses with in-depth case studies. The large variance implies that it is not only the populist ideology that drives how governments use constitutional changes. What exactly other driving forces are can not be answered by our research right now, but existing scholarship points to the [host-ideologies](https://www.cogitatiopress.com/politicsandgovernance/article/view/919), the political system or a [country's previous democratic quality](https://ejpr.onlinelibrary.wiley.com/doi/epdf/10.1111/1475-6765.12564) as explanations. 
+If you go through some of the different countries, you will see how much variance there is in how populists in office use constitutional canges. Our results speak to the findings of many other papers that show how much variance there is in populist parties behavior toward democracy. To understand the effect of populism on democracy, we need to combine cross-country analyses with in-depth case studies. The large variance implies that it is not only the populist ideology that drives how governments use constitutional changes. What exactly other driving forces are can not be answered by our research right now, but existing scholarship points to the [host-ideologies](https://www.cogitatiopress.com/politicsandgovernance/article/view/919), the political system or a [country's previous democratic quality](https://ejpr.onlinelibrary.wiley.com/doi/epdf/10.1111/1475-6765.12564) as explanations.
 
 ```{=html}
 <!--
