@@ -50,7 +50,7 @@ write.csv(vdem, "data/ccpc_vdem_populism.csv")
 
 ```{=html}
 <iframe width="100%" height="799" frameborder="0"
-  src="https://observablehq.com/embed/8d3cd6452ab1e67e@479?cells=viewof+source%2Cviewof+Dataset%2Cviewof+Vars%2Cprint%2Cplotfinal&api_key=b7dc8c92e8fbf2b2c4a595241af7f48a1ac2c70c"></iframe>
+  src="https://observablehq.com/embed/@jasminsworkspace/populism@587?cells=viewof+source%2Cviewof+Dataset%2Cviewof+Vars%2Cprint%2Cplotfinal"></iframe>
 ```
 <!-- To get a better sense of the changes of constitutional texts that happen under populist governments, we constructed indices for executive aggrandizement, judicial independence, political rights and social rights. Out of 89 constitutional changes under populist government, only 10 cases can be captured with these indices. -->
 
