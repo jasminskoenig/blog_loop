@@ -28,7 +28,6 @@ While the events in the US, Hungary, Poland, and Israel undoubtedly raise alarms
 
 What happens around the world when populists change constitutions? In a forthcoming paper, we analyzed the relationship between populist government, constitutional changes, and liberal democracy empirically. Our study examines the impact of constitutional modifications by populist and non-populist governments on the quality of liberal democratic institutions and citizen participation, focusing on Europe and Latin America. Given its people-centered approach, populism may positively influence the inclusion of citizens in the democratic process while simultaneously dismantling horizontal accountability. To operationalize democratic quality, we utilize [V-Dem](https://v-dem.net/)'s participatory (PCI) and liberal component index (LCI), while constitutional changes are coded using data from the [Comparative Constitutions Project](https://comparativeconstitutionsproject.org/)'s Database. To capture populism across two continents, we employ [V-Party](https://www.v-dem.net/data/v-party-dataset/)'s populism score.
 
-
 Our shed light on how different populists in power use constitutional leverage constitutional amendments to manifest their respective visions of democracy. While populists in power in Latin America have used constitutional changes to improve liberal democratic institutions, they did not improve the quality of participatory democracy overall. In contrast, in Europe, populists in power employed constitutional changes that resulted in a decline in the quality of both democratic characteristics.
 
 Below, we implemented an interactive tool that lets users choose between 3 different data sets on populism to explore the constitutional changes and their effect on different indices of democratic quality in various countries.
@@ -64,9 +63,3 @@ So far, much of our knowledge on the intersection between populism and constitut
 <!--
 To explain the varying effect of populism on constitutional democracy, we need to consider the circumstances in which the populist parties govern as well as the respective party's main ideology. In many multi-party systems populists are not in government by themselves, but govern with a mainstream coalition partner who forces them to [moderate](https://muse.jhu.edu/article/230454). In a [case study of Austria](https://ejpr.onlinelibrary.wiley.com/doi/epdf/10.1111/1475-6765.12573), we examine whether the right-wing populist FPÖ (and its splinter BZÖ) crossed constitutional boundaries more often than non-populists. They never hid their hostility towards the Austrian Constitutional Court in cases it ruled against them, calling it, for example, a "carnival joke". Earlier manifestos by the party also included a concept for a judicial reform that would have curbed the judiciary's power. Still, the party was not more likely to initiate legislation that was invalidated by the Austrian Constitutional Court. We argue that this is because their coalition partner pressured them into moderation the policy proposals, under the watchful eye of the public. When populists are in office, we should never forget to watch the ones they are governing with. -->
 ```
-
-
-
-
-
-
