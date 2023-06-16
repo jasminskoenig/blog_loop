@@ -1,4 +1,4 @@
 - source: Blog.qmd
   quarto-pub:
     - id: 6093c314-99be-4caa-8871-98fc2ce5f171
-      url: 'https://quartopub.com/sites/jasminskoenig/a-different-understanding-of-democratic-constitutions'
+      url: 'https://jasminskoenig.quarto.pub/a-different-understanding-of-democratic-constitutions'

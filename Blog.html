@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -61,7 +61,39 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <div class="cell">
-
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;">koRpus</th>
+<th style="text-align: left;">stringi</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Word count</td>
+<td style="text-align: left;">702</td>
+<td style="text-align: left;">713</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Character count</td>
+<td style="text-align: left;">4942</td>
+<td style="text-align: left;">4942</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sentence count</td>
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">Not available</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reading time</td>
+<td style="text-align: left;">3.5 minutes</td>
+<td style="text-align: left;">3.6 minutes</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <p>In their kick-off of this series, Petra Guasti and Mattia Zulianello touched upon one of the most discussed defining features of populism: That it conflicts with two key features of liberal democracy: pluralism and minority rights.</p>
 <section id="populists-in-power-and-constitutional-regression---a-myth" class="level2">
@@ -75,13 +107,10 @@ ul.task-list li input[type="checkbox"] {
 <p>What happens around the world when populists change constitutions? In a forthcoming paper, we analyzed the relationship between populist government, constitutional changes, and liberal democracy empirically. Our study examines the impact of constitutional modifications by populist and non-populist governments on the quality of liberal democratic institutions and citizen participation, focusing on Europe and Latin America. Given its people-centered approach, populism may positively influence the inclusion of citizens in the democratic process while simultaneously dismantling horizontal accountability. To operationalize democratic quality, we utilize <a href="https://v-dem.net/">V-Dem</a>’s participatory (PCI) and liberal component index (LCI), while constitutional changes are coded using data from the <a href="https://comparativeconstitutionsproject.org/">Comparative Constitutions Project</a>’s Database. To capture populism across two continents, we employ <a href="https://www.v-dem.net/data/v-party-dataset/">V-Party</a>’s populism score.</p>
 <p>Our shed light on how different populists in power use constitutional leverage constitutional amendments to manifest their respective visions of democracy. While populists in power in Latin America have used constitutional changes to improve liberal democratic institutions, they did not improve the quality of participatory democracy overall. In contrast, in Europe, populists in power employed constitutional changes that resulted in a decline in the quality of both democratic characteristics.</p>
 <p>Below, we implemented an interactive tool that lets users choose between 3 different data sets on populism to explore the constitutional changes and their effect on different indices of democratic quality in various countries.</p>
-<div class="cell">
-
-</div>
 </section>
 <section id="participation" class="level2">
 <h2 class="anchored" data-anchor-id="participation">Participation</h2>
-<iframe width="100%" height="822.71875" frameborder="0" src="https://observablehq.com/embed/@jasminsworkspace/populism@1021?cells=viewof+source%2Cviewof+Democracy%2Cviewof+Dataset%2Cviewof+Vars%2Cprint%2Cplotfinal"></iframe>
+<iframe width="100%" height="906.765625" frameborder="0" src="https://observablehq.com/embed/@jasminsworkspace/populism@1338?cells=viewof+source%2Cviewof+Dataset%2Cviewof+Vars%2Cviewof+Democracy%2Cplotfinal%2Clegend%2Cprint"></iframe>
 <!-- To get a better sense of the changes of constitutional texts that happen under populist governments, we constructed indices for executive aggrandizement, judicial independence, political rights and social rights. Out of 89 constitutional changes under populist government, only 10 cases can be captured with these indices. -->
 <!-- REFER TO RUTH-LOVELL ON IDEOLOGY! -->
 <p>Go through some of the different countries, and you will see a significant variance in how populists in office use constitutional changes, implying that it is not simply populist ideology that drives constitutional regression. Our results align with the conclusions of numerous other studies, emphasizing the substantial diversity in the behavior of populist parties toward democracy. Existing scholarship points to the <a href="https://www.cogitatiopress.com/politicsandgovernance/article/view/919">host-ideologies</a>, the political system or a <a href="https://ejpr.onlinelibrary.wiley.com/doi/epdf/10.1111/1475-6765.12564">country’s previous democratic quality</a> as explanations.</p>
@@ -119,9 +148,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -186,6 +229,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {

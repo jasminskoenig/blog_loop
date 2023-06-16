@@ -9,9 +9,9 @@ execute:
 #| label: wordstats
 #| warning: false
 #| message: false
-# library(wordcountaddin)
-# wordcount <- wordcountaddin::text_stats('Blog.qmd')
-# wordcount
+ library(wordcountaddin)
+ wordcount <- wordcountaddin::text_stats('Blog.qmd')
+ wordcount
 ```
 
 In their kick-off of this series, Petra Guasti and Mattia Zulianello touched upon one of the most discussed defining features of populism: That it conflicts with two key features of liberal democracy: pluralism and minority rights.
@@ -48,8 +48,8 @@ write.csv(vdem, "data/ccpc_vdem_populism.csv")
 ## Participation
 
 ```{=html}
-<iframe width="100%" height="822.71875" frameborder="0"
-  src="https://observablehq.com/embed/@jasminsworkspace/populism@1021?cells=viewof+source%2Cviewof+Democracy%2Cviewof+Dataset%2Cviewof+Vars%2Cprint%2Cplotfinal"></iframe>
+<iframe width="100%" height="906.765625" frameborder="0"
+  src="https://observablehq.com/embed/@jasminsworkspace/populism@1338?cells=viewof+source%2Cviewof+Dataset%2Cviewof+Vars%2Cviewof+Democracy%2Cplotfinal%2Clegend%2Cprint"></iframe>
 ```
 <!-- To get a better sense of the changes of constitutional texts that happen under populist governments, we constructed indices for executive aggrandizement, judicial independence, political rights and social rights. Out of 89 constitutional changes under populist government, only 10 cases can be captured with these indices. -->
 
